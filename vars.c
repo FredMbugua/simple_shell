@@ -144,4 +144,17 @@ int replace_vars(info_t *info)
 	return (0);
 }
 
+/**
+ * replace_string - replaces string
+ * @old: the original string
+ * @new: the string that replaces the one in @old
+ *
+ * Return: 1 if replaced
+ */
 
+int replace_string(char **old, char *new)
+{
+	free(*old);
+	*old = new;
+	return (1);
+}
