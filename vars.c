@@ -13,7 +13,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t j = *p;
 
-	if (buf[j] == '|' && buf[j +1] == '|')
+	if (buf[j] == '|' && buf[j + 1] == '|')
 	{
 		buf[j] = 0;
 		j++;
@@ -79,7 +79,7 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
  * Return: 1 if alias is replaced, otherwise, 0
  */
 
-int replace_alias(info_t * info)
+int replace_alias(info_t *info)
 {
 	int i;
 	list_t *node;
