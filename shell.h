@@ -46,12 +46,12 @@ typedef struct liststr
 {
 	int num;
 	char *str;
-	struct liststr *nex;
-}list_t;
+	struct liststr *next;
+} list_t;
 
 /**
  * struct passinfo - contains pseudo-arguments to pass into a function,
- * 		allowing uniform prototype for function pointer struct
+ *		allowing uniform prototype for function pointer struct
  * @arg: a string of arguments generated from getline()
  * @argv: an array of strings generated from arg
  * @path: a string path for the current command
@@ -81,7 +81,7 @@ typedef struct passinfo
 	unsigned int line_count;
 	int err_num;
 	int linecount_flag;
-	char * fname;
+	char *fname;
 	list_t *env;
 	list_t *history;
 	list_t *alias;
@@ -93,7 +93,7 @@ typedef struct passinfo
 	int cmd_buf_type;
 	int readfd;
 	int histcount;
-}info_t;
+} info_t;
 
 /**
  * struct builtin - contains a builtin string and related function
@@ -105,7 +105,7 @@ typedef struct builtin
 {
 	char *type;
 	int (*func)(info_t *);
-}builtin_table;
+} builtin_table;
 
 /* shloop.c */
 int hsh(info_t *, char **);
@@ -114,8 +114,8 @@ void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
 /* parser.c */
-int is_cmd(info_t *,char *);
-char * dup_chars(char *, int, int);
+int is_cmd(info_t *, char *);
+char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 /* loophsh.c */
@@ -151,7 +151,7 @@ char **strtow2(char *, char);
 /* realloc.c */
 char *_memeset(char *, char, unsigned int);
 void ffree(char *);
-void *_realloc (void *, unsigned int, unsigned int);
+void *_realloc(void *, unsigned int, unsigned int);
 
 /* memory.c */
 int bfree(void **);
@@ -226,6 +226,6 @@ int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
-int replace_string(char **,char *);
+int replace_string(char **, char *);
 
 #endif /* _SHEL_H */
