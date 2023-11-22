@@ -75,7 +75,8 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 }
 
 /**
- * print_list_str - this will print only the str element of a list_t linked list
+ * print_list_str - this will print only the str element 
+ *			of a list_t linked list
  * @h: refers to the pointer to first node
  *
  * Return: size of list
